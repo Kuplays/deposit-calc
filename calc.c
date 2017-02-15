@@ -49,7 +49,8 @@ int main(void) {
         }
     }
 
-    printf("%d %f", duration, investment);
+    printf("Duration: %d \nInvestment: %f", duration, investment);
+    printf("\n");
     
     return 0;
 }
