@@ -7,6 +7,10 @@ int main(void) {
     int duration;
     float investment;
     
+    printf("Enter investment duration: ");
+    scanf("%d", &duration);
+    printf("Enter investent amount: ");
+    scanf("%f", &investment);
     getInput(&duration, &investment);
     perform(&duration, &investment);
 
@@ -17,10 +21,6 @@ int main(void) {
 }
 
 void getInput(int* dur, float* amount) {
-    printf("Enter investment duration: ");
-    scanf("%d", dur);
-    printf("Enter investent amount: ");
-    scanf("%f", amount);
     if (*dur < 0 || *dur > 365 || *amount < 0.0) {
         getInput(dur, amount);
     }
