@@ -1,12 +1,16 @@
-all : prog
+CC = gcc
+CFLAGS = -c -Wall -Werror
+EXECUTABLE = bin/prog
+SOURCES = src/main.c src/deposit.c
+OBJECTS = $(SOURCES: .c = .o)
 
-main.o :src/main.c 
-	gcc -o build/main.o src/main.c 
-deposit.o : src/deposit.c
-	gcc -o build/deposit.o src/deposit.c
+all: $(SOURCES) $(EXECUTABLE)
 
-prog : main.o deposit.o
-	gcc -Wall -Werror -o bin/prog.exe build/main.o build/deposit.o
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(OBJECTS) -o $@
+
+.c.o:
+	$(CC) $(CFLAGS) $< -o $@
 
 clean:
 	rm -rf *.o *.exe
