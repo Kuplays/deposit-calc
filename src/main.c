@@ -3,16 +3,17 @@
 
 int main(void) {
     int duration;
-    float investment;
+    int investment;
     
     printf("Enter investment duration: ");
     scanf("%d", &duration);
     printf("Enter investent amount: ");
-    scanf("%f", &investment);
-    getInput(&duration, &investment);
-    perform(&duration, &investment);
+    scanf("%d", &investment);
 
-    printf("Duration: %d \nInvestment: %f", duration, investment);
+    if (inputCheck(duration, investment)) return 0;
+    investment = perform(duration, investment);
+
+    printf("Duration: %d \nInvestment: %d", duration, investment);
     printf("\n");
     
     return 0;
