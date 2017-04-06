@@ -2,7 +2,7 @@
 #include "deposit.h"
 
 int inputCheck(int dur, int amount) {
-    if (dur < 0 || dur > 365 || amount < 0) return 1;
+    if (dur <= 0 || dur > 365 || amount <= 0) return 1;
     return 0;
 }
 
