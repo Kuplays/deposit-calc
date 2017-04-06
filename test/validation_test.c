@@ -1,2 +1,2 @@
-#include "deposit.c"
+#include "deposit.h"
 #include "ctest.h"
