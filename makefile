@@ -8,7 +8,6 @@ TEST_EXEC = bin/test
 TEST_OBJ_DIR = build/test
 SRC_BUILD_DIR = build/src
 
-.PHONY: all clean test
 
 all: $(SRC_BUILD_DIR)/main.o $(SRC_BUILD_DIR)/deposit.o
 	$(CC) $(SRC_BUILD_DIR)/main.o $(SRC_BUILD_DIR)/deposit.o -o $(EXECUTABLE)
